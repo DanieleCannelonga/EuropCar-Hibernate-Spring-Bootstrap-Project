@@ -34,5 +34,6 @@ public class AreaServiceImpl implements AreaService {
 
 	@Override
 	public void deleteArea(Integer idArea) {
+		areaRepository.deleteById(idArea);
 	}
 }

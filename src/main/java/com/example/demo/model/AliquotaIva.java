@@ -14,6 +14,7 @@ public class AliquotaIva {
  // Costanti
  public static final String PROPERTY_idArea = "idaliquotaIva";
  public static final String PROPERTY_codice = "codice";
+ public static final String PROPERTY_aliquotaIva = "aliquotaIva";
  // Attributi
  
  @Column(name = "id")
@@ -22,9 +23,7 @@ public class AliquotaIva {
  private int idaliquotaIva;
  
 //@ManyToOne
-// @JoinColumn(name = "idvenditore")
 // @NotNull(message="il campo non può essere nullo")
-// private Venditore ovenditore;
  
  @Column(name = "Codice")
  @NotBlank(message="Il campo non può essere vuoto")
@@ -68,6 +67,7 @@ public void setCodice(String codice) {
  private void inizializza() {
   this.idaliquotaIva = 0;
   this.codice = null;
+  this.aliquotaIva = null;
 //  this.setOvenditore(null);
  }
 }

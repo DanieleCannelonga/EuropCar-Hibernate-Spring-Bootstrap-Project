@@ -9,21 +9,20 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Area")
-public class Area {
+@Table(name = "Gruppo")
+public class Gruppo {
  // Costanti
- public static final String PROPERTY_idArea = "idarea";
+ public static final String PROPERTY_idGruppo = "idgruppo";
  public static final String PROPERTY_codice = "codice";
- public static final String PROPERTY_area = "area";
+ public static final String PROPERTY_nome = "nome";
  // Attributi
  
  @Column(name = "id")
  @Id
  @GeneratedValue(strategy = GenerationType.AUTO)
- private int idarea;
+ private int idgruppo;
  
 //@ManyToOne
-// @JoinColumn(name = "idvenditore")
 // @NotNull(message="il campo non può essere nullo")
 // private Venditore ovenditore;
  
@@ -31,25 +30,25 @@ public class Area {
  @NotBlank(message="Il campo non può essere vuoto")
  private String codice;
  
- @Column(name = "Area")
+ @Column(name = "Nome")
  @NotBlank(message="Il campo non può essere vuoto")
- private String area;
+ private String nome;
 
  // Get e Set
 // public Venditore getOvenditore() {
 //  return ovenditore;
 // }
- public String getArea() {
-  return area;
+ public String getNome() {
+  return nome;
  }
- public void setArea(String area) {
-  this.area = area;
+ public void setNome(String nome) {
+  this.nome = nome;
  }
- public int getIdarea() {
-  return idarea;
+ public int getIdgruppo() {
+  return idgruppo;
  }
- public void setIdarea(int idarea) {
-  this.idarea = idarea;
+ public void setIdgruppo(int idgruppo) {
+  this.idgruppo = idgruppo;
  }
 // public void setOvenditore(Venditore ovenditore) {
 //  this.ovenditore = ovenditore;
@@ -62,14 +61,14 @@ public class Area {
  }
 
  // Costruttori
- public Area() {
+ public Gruppo() {
   this.inizializza();
  }
 
  private void inizializza() {
-  this.idarea = 0;
+  this.idgruppo = 0;
   this.codice = null;
-  this.area = null;
+  this.nome = "";
 //  this.setOvenditore(null);
  }
 }

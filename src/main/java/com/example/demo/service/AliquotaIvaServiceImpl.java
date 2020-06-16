@@ -34,5 +34,6 @@ public class AliquotaIvaServiceImpl implements AliquotaIvaService {
 
 	@Override
 	public void deleteAliquotaIva(Integer idAliquotaIva) {
+		aliquotaIvaRepository.deleteById(idAliquotaIva);
 	}
 }
