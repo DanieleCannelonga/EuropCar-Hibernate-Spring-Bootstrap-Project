@@ -31,32 +31,32 @@ public class AliquotaIva {
  
  @Column(name = "AliquotaIva")
  @NotBlank(message="Il campo non può essere vuoto")
- private String aliquotaIva;
+ private Integer aliquotaIva;
 
  // Get e Set
-// public Venditore getOvenditore() {
-//  return ovenditore;
-// }
-// public void setOvenditore(Venditore ovenditore) {
-//  this.ovenditore = ovenditore;
-// }
+ // public Venditore getOvenditore() {
+ //  return ovenditore;
+ // }
+ // public void setOvenditore(Venditore ovenditore) {
+ //  this.ovenditore = ovenditore;
+ // }
  public String getCodice() {
   return codice;
  }
  public int getIdaliquotaIva() {
 	return idaliquotaIva;
-}
-public void setIdaliquotaIva(int idaliquotaIva) {
+ }
+ public void setIdaliquotaIva(int idaliquotaIva) {
 	this.idaliquotaIva = idaliquotaIva;
-}
-public String getAliquotaIva() {
+ }
+ public Integer getAliquotaIva() {
 	return aliquotaIva;
-}
-public void setAliquotaIva(String aliquotaIva) {
+ }
+ public void setAliquotaIva(Integer aliquotaIva) {
 	this.aliquotaIva = aliquotaIva;
-}
-public void setCodice(String codice) {
-  this.codice = codice;
+ }
+ public void setCodice(String codice) {
+	this.codice = codice;
  }
 
  // Costruttori
