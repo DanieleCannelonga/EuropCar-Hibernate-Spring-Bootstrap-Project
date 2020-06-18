@@ -24,14 +24,10 @@
   <h3>EuropCar</h3>
   <br>
   <div class="btn-group-vertical">
-  	<a class="btn btn-primary" href="http://localhost:8080/AliquotaIva/ListaAliquoteIva" role="button">Gestione AliquoteIva</a> 
-    <a class="btn btn-secondary" href="http://localhost:8080/SottoCategoria/ListaSottoCategorie" role="button">Gestione SottoCategorie</a> 
-  	<a class="btn btn-danger" href="http://localhost:8080/Area/ListaAree" role="button">Gestione Aree d'Investimento</a> 
-  	<a class="btn btn-primary" href="http://localhost:8080/AreaGeo/ListaAreeGeo" role="button">Gestione Aree Geografiche</a>
-  	<a class="btn btn-success" href="http://localhost:8080/Azienda/ListaAziende" role="button">Gestione Aziende</a> 
-  	<a class="btn btn-warning" href="http://localhost:8080/Gruppo/ListaGruppi" role="button">Gestione Gruppi</a> 
-  	<a class="btn btn-primary" href="http://localhost:8080/Progetto/ListaProgetti" role="button">Gestione Progetti</a> 
-  	<a class="btn btn-secondary" href="http://localhost:8080/Fornitore/ListaFornitori" role="button">Gestione Fornitori</a>
+  	<a class="btn btn-primary" href="http://localhost:8080/Riconciliazione/Riconciliazione" role="button">Riconciliazione</a> 
+    <a class="btn btn-secondary" href="http://localhost:8080/Definizione/Definizione" role="button">Definizione</a> 
+  	<a class="btn btn-danger" href="http://localhost:8080/Avanzamento/Avanzamento" role="button">Avanzamento</a> 
+  	<a class="btn btn-primary" href="http://localhost:8080/SpesaInvestimento/ListaSpeseInvestimento" role="button">Spesa Investimento</a>
   </div>
  </div>
 

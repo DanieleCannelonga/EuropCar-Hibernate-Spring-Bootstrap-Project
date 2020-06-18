@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista Aree</title>
+<title>Lista Progetti</title>
 <link rel="stylesheet"
  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -19,7 +19,7 @@
 <script type="text/javascript">
  function deleteConfirm() {
 
-  if (confirm("Eliminare l'area selezionata?")) {
+  if (confirm("Eliminare il progetto selezionato?")) {
    return true;
   } else {
    return false;
@@ -34,28 +34,24 @@
  role="button">Home</a>
 <body>
  <div class="container">
-  <h2>Lista Aree</h2>
+  <h2>Lista Progetti</h2>
   <table class="table table-striped">
    <thead>
   
     <th scope="row">Codice</th>
-    <th scope="row">Area</th>
-    <th scope="row">Anno Contabile</th>
     <th></th>
     <th></th>
    </thead>
    <tbody>
-    <c:forEach items="${elencoAree}" var="elenco">
+    <c:forEach items="${elencoProgetti}" var="elenco">
      <tr>
       <td>${elenco.codice}</td>
-      <td>${elenco.area}</td>
-      <td>${elenco.oannocontabile.descrizione}</td>
       <td><spring:url
-        value="/Area/EditArea/${elenco.idarea}"
+        value="/Progetto/EditProgetto/${elenco.idprogetto}"
         var="editURL" /><a href="${editURL}" role="button"
        class="btn btn-primary">Modifica</a></td>
       <td><spring:url
-        value="/Area/DeleteArea/${elenco.idarea}"
+        value="/Progetto/DeleteProgetto/${elenco.idprogetto}"
         var="deleteURL" /> <a href="${deleteURL}" role="button"
        class="btn btn-primary"
        onclick="return deleteConfirm()">Elimina</a>
@@ -65,7 +61,7 @@
    </tbody>
   </table>
 
-  <spring:url value="/Area/AddArea/" var="addURL" />
-  <a href="${addURL}" role="button" class="btn btn-primary">Nuova Area</a>
+  <spring:url value="/Progetto/AddProgetto/" var="addURL" />
+  <a href="${addURL}" role="button" class="btn btn-primary">Nuovo Progetto</a>
  </div>
 </body>

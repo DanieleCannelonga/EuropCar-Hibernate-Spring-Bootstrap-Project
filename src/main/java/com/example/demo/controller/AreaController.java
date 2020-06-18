@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.model.AnnoContabile;
 import com.example.demo.model.Area;
+import com.example.demo.service.AnnoContabileService;
 import com.example.demo.service.AreaService;
 
 @Controller
@@ -23,6 +25,9 @@ public class AreaController {
 
 	@Autowired
 	AreaService areaService;
+	
+	@Autowired
+	AnnoContabileService annoContabileService;
 
 	@GetMapping (value = "/ListaAree")
 	public ModelAndView listaAree() {
@@ -38,6 +43,8 @@ public class AreaController {
 		Area oArea = new Area();
 		model.addObject("oArea", oArea);
 		model.setViewName("/Area/AddEditArea");
+		List<AnnoContabile> listaAnniContabili = annoContabileService.getAllAnniContabili();
+		model.addObject("elencoAnniContabili", listaAnniContabili);
 		return model;
 	}
 
@@ -47,6 +54,8 @@ public class AreaController {
 		Area oArea = areaService.getAreaById(id);
 		model.addObject("oArea", oArea);
 		model.setViewName("/Area/AddEditArea");
+		List<AnnoContabile> listaAnniContabili = annoContabileService.getAllAnniContabili();
+		model.addObject("elencoAnniContabili", listaAnniContabili);
 		return model;
 	}
 

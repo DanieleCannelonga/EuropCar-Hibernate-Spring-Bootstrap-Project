@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista Aree</title>
+<title>Lista Spese Investimento</title>
 <link rel="stylesheet"
  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -19,7 +19,7 @@
 <script type="text/javascript">
  function deleteConfirm() {
 
-  if (confirm("Eliminare l'area selezionata?")) {
+  if (confirm("Eliminare la spesa investimento selezionata?")) {
    return true;
   } else {
    return false;
@@ -28,34 +28,32 @@
 </script>
 
 </head>
-<a class="btn btn-light" href="http://localhost:8080/Archivio/Lista"
+<a class="btn btn-light" href="http://localhost:8080/Budget/Lista"
  role="button">Indietro</a>
 <a class="btn btn-light" href="http://localhost:8080/Menu/List"
  role="button">Home</a>
 <body>
  <div class="container">
-  <h2>Lista Aree</h2>
+  <h2>Lista Spese Investimento</h2>
   <table class="table table-striped">
    <thead>
   
-    <th scope="row">Codice</th>
-    <th scope="row">Area</th>
-    <th scope="row">Anno Contabile</th>
+    <th scope="row">Spesa Investimento</th>
+    <th scope="row">Sotto Categoria</th>
     <th></th>
     <th></th>
    </thead>
    <tbody>
-    <c:forEach items="${elencoAree}" var="elenco">
+    <c:forEach items="${elencoSpeseInvestimento}" var="elenco">
      <tr>
-      <td>${elenco.codice}</td>
-      <td>${elenco.area}</td>
-      <td>${elenco.oannocontabile.descrizione}</td>
+      <td>${elenco.spesaInvestimento}</td>
+      <td>${elenco.osottocategoria.sottocategoria}</td>
       <td><spring:url
-        value="/Area/EditArea/${elenco.idarea}"
+        value="/SpesaInvestimento/EditSpesaInvestimento/${elenco.idspesainvestimento}"
         var="editURL" /><a href="${editURL}" role="button"
        class="btn btn-primary">Modifica</a></td>
       <td><spring:url
-        value="/Area/DeleteArea/${elenco.idarea}"
+        value="/SpesaInvestimento/DeleteSpesaInvestimento/${elenco.idspesainvestimento}"
         var="deleteURL" /> <a href="${deleteURL}" role="button"
        class="btn btn-primary"
        onclick="return deleteConfirm()">Elimina</a>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista Aree</title>
+<title>Lista Aree Geografiche</title>
 <link rel="stylesheet"
  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -34,28 +34,26 @@
  role="button">Home</a>
 <body>
  <div class="container">
-  <h2>Lista Aree</h2>
+  <h2>Lista Aree Geografiche</h2>
   <table class="table table-striped">
    <thead>
   
     <th scope="row">Codice</th>
-    <th scope="row">Area</th>
-    <th scope="row">Anno Contabile</th>
+    <th scope="row">Area Geografica</th>
     <th></th>
     <th></th>
    </thead>
    <tbody>
-    <c:forEach items="${elencoAree}" var="elenco">
+    <c:forEach items="${elencoAreeGeo}" var="elenco">
      <tr>
       <td>${elenco.codice}</td>
-      <td>${elenco.area}</td>
-      <td>${elenco.oannocontabile.descrizione}</td>
+      <td>${elenco.areaGeo}</td>
       <td><spring:url
-        value="/Area/EditArea/${elenco.idarea}"
+        value="/AreaGeo/EditAreaGeo/${elenco.idareageo}"
         var="editURL" /><a href="${editURL}" role="button"
        class="btn btn-primary">Modifica</a></td>
       <td><spring:url
-        value="/Area/DeleteArea/${elenco.idarea}"
+        value="/AreaGeo/DeleteAreaGeo/${elenco.idareageo}"
         var="deleteURL" /> <a href="${deleteURL}" role="button"
        class="btn btn-primary"
        onclick="return deleteConfirm()">Elimina</a>
@@ -65,7 +63,7 @@
    </tbody>
   </table>
 
-  <spring:url value="/Area/AddArea/" var="addURL" />
-  <a href="${addURL}" role="button" class="btn btn-primary">Nuova Area</a>
+  <spring:url value="/AreaGeo/AddAreaGeo/" var="addURL" />
+  <a href="${addURL}" role="button" class="btn btn-primary">Nuova Area Geografica</a>
  </div>
 </body>
