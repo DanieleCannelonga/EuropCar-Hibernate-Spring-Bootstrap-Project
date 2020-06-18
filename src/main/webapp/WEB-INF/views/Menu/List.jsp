@@ -34,7 +34,7 @@
   <a class="btn btn-info" href="http://localhost:8080/Budget/Lista" role="button">Budget</a> 
   <a class="btn btn-warning" href="http://localhost:8080/FatturaPassiva/Menu" role="button">Gestione Fatture</a> 
   <a class="btn btn-primary" href="http://localhost:8080/ImportaFatture/Importa" role="button">Importa Fatture</a> 
-  <a class="btn btn-secondary" href="http://localhost:8080/OrdineAcquisto/Menu" role="button">Gestione Ordini D'acquisto</a>
+  <a class="btn btn-secondary" href="http://localhost:8080/OrdineAcquisto/Lista" role="button">Gestione Ordini D'acquisto</a>
   </div>
  </div>
 

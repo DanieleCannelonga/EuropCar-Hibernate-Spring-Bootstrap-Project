@@ -47,7 +47,7 @@
     <c:forEach items="${elencoSpeseInvestimento}" var="elenco">
      <tr>
       <td>${elenco.spesaInvestimento}</td>
-      <td>${elenco.osottocategoria.sottocategoria}</td>
+      <td>${elenco.osottocategoria.sottoCategoria}</td>
       <td><spring:url
         value="/SpesaInvestimento/EditSpesaInvestimento/${elenco.idspesainvestimento}"
         var="editURL" /><a href="${editURL}" role="button"
@@ -63,7 +63,7 @@
    </tbody>
   </table>
 
-  <spring:url value="/Area/AddArea/" var="addURL" />
-  <a href="${addURL}" role="button" class="btn btn-primary">Nuova Area</a>
+  <spring:url value="/SpesaInvestimento/AddSpesaInvestimento/" var="addURL" />
+  <a href="${addURL}" role="button" class="btn btn-primary">Nuova Spesa Investimento</a>
  </div>
 </body>

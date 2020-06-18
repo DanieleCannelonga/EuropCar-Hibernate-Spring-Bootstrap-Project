@@ -43,8 +43,8 @@ public class SpesaInvestimentoController {
 		SpesaInvestimento oSpesaInvestimento = new SpesaInvestimento();
 		model.addObject("oSpesaInvestimento", oSpesaInvestimento);
 		model.setViewName("/SpesaInvestimento/AddEditSpesaInvestimento");
-		List<SottoCategoria> listaSottocategorie = sottoCategoriaService.getAllSottoCategorie();
-		model.addObject("elencoSottocategorie", listaSottocategorie);
+		List<SottoCategoria> listaSottoCategorie = sottoCategoriaService.getAllSottoCategorie();
+		model.addObject("elencoSottoCategorie", listaSottoCategorie);
 		return model;
 	}
 
@@ -54,8 +54,8 @@ public class SpesaInvestimentoController {
 		SpesaInvestimento oSpesaInvestimento = spesaInvestimentoService.getSpesaInvestimentoById(id);
 		model.addObject("oSpesaInvestimento", oSpesaInvestimento);
 		model.setViewName("/SpesaInvestimento/AddEditSpesaInvestimento");
-		List<SottoCategoria> listaSottocategorie = sottoCategoriaService.getAllSottoCategorie();
-		model.addObject("elencoSottocategorie", listaSottocategorie);
+		List<SottoCategoria> listaSottoCategorie = sottoCategoriaService.getAllSottoCategorie();
+		model.addObject("elencoSottoCategorie", listaSottoCategorie);
 		return model;
 	}
 
@@ -67,7 +67,7 @@ public class SpesaInvestimentoController {
 			return model;
 		} else {
 			spesaInvestimentoService.saveOrUpdate(oSpesaInvestimento);
-			return new ModelAndView("redirect:/SpesaInvestimento/ListaSpesaInvestimento");
+			return new ModelAndView("redirect:/SpesaInvestimento/ListaSpeseInvestimento");
 		}
 	}
 	

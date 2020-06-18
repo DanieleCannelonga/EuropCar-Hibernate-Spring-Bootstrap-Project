@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Edit Spesa Investimento</title>
+<title>Add Edit Area</title>
 <link rel="stylesheet"
  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <script
@@ -16,28 +16,33 @@
 <script
  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<a class="btn btn-light" href="http://localhost:8080/menu/List"
+<a class="btn btn-light" href="http://localhost:8086/menu/List"
  role="button">Home</a>
 <a class="btn btn-light"
- href="http://localhost:8080/SpesaInvestimento/ListaSpeseInvestimento" role="button">Indietro</a>
+ href="http://localhost:8086/Area/ListaAree" role="button">Indietro</a>
 <body>
  <div class="container">
-  <spring:url value="/SpesaInvestimento/SaveSpesaInvestimento/" var="saveURL" />
+  <spring:url value="/Area/SaveArea/" var="saveURL" />
   <h2>Add Edit Area</h2>
-  <form:form modelAttribute="oSpesaInvestimento" method="post" action="${saveURL}" cssClass="form">
-   <form:hidden path="idspesainvestimento" />
+  <form:form modelAttribute="oArea" method="post" action="${saveURL}" cssClass="form">
+   <form:hidden path="idarea" />
    <div class="form-group">
     <label>Codice</label>
-    <form:input path="spesaInvestimento" cssClass="form-control" id="spesaInvestimento" />
-    <form:errors path="spesaInvestimento" cssClass="error" />
+    <form:input path="codice" cssClass="form-control" id="codice" />
+    <form:errors path="codice" cssClass="error" />
+   </div>
+   <div class="form-group">
+    <label>Area</label>
+    <form:input path="area" cssClass="form-control" id="area" />
+    <form:errors path="area" cssClass="error" />
    </div>
    <div class="form-group">
     <label>Anno Contabile</label>
-    <form:select path="osottocategoria" cssClass="form-control" id="osottocategoria">
-     <form:option value="0">Seleziona una Sotto Categoria:</form:option>
-     <form:options items="${elencoSottoCategorie}" itemValue="idsottocategoria" itemLabel="sottoCategoria" />
+    <form:select path="oannocontabile" cssClass="form-control" id="oannocontabile">
+     <form:option value="0">Seleziona un' Anno Contabile:</form:option>
+     <form:options items="${elencoAnniContabili}" itemValue="idannocontabile" itemLabel="descrizione" />
     </form:select>
-       <form:errors path="osottocategoria" cssClass="error"/>
+       <form:errors path="oannocontabile" cssClass="error"/>
    </div>
    <button type="submit" class="btn btn-primary">Salva</button>
   </form:form>
