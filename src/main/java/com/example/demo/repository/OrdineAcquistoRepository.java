@@ -9,6 +9,6 @@ import com.example.demo.model.OrdineAcquisto;
 
 public interface OrdineAcquistoRepository extends CrudRepository<OrdineAcquisto, Integer> {
 	
-	@Query("select a from OrdineAcquisto a where a.ofornitore.idfornitore = :idfornitore")
+	@Query("select a from OrdineAcquisto a where a.ofornitore.idfornitore = ?1")
 	List<OrdineAcquisto> GetOrdiniPerFornitore(Integer idfornitore);
 }

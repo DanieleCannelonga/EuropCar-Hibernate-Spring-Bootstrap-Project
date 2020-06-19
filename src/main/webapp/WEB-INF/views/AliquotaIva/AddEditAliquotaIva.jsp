@@ -16,10 +16,10 @@
 <script
  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<a class="btn btn-light" href="http://localhost:8086/menu/List"
+<a class="btn btn-light" href="http://localhost:8080/menu/List"
  role="button">Home</a>
 <a class="btn btn-light"
- href="http://localhost:8086/AliquotaIva/ListaAliquoteIva" role="button">Indietro</a>
+ href="http://localhost:8080/AliquotaIva/ListaAliquoteIva" role="button">Indietro</a>
 <body>
  <div class="container">
   <spring:url value="/AliquotaIva/SaveAliquotaIva/" var="saveURL" />

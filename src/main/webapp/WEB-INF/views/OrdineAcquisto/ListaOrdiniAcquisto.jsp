@@ -37,7 +37,14 @@
  <div class="container">
   <h2>Lista Ordini Acquisto</h2>
   <table class="table table-striped">
+  <spring:url value="/OrdineAcquisto/CercaOrdiniAcquistoPerFornitore/" var="saveURL" />
   <form:form modelAttribute="oggettoFornitore" method="post" action="${saveURL}" cssClass="form">
+   <form:hidden path="ragioneSociale" />
+   <form:hidden path="indirizzo" />
+   <form:hidden path="citta" />
+   <form:hidden path="cap" />
+   <form:hidden path="provincia" />
+   <form:hidden path="partitaIva" />
    <div class="form-group">
     <label>Fornitore</label>
     <form:select path="idfornitore" cssClass="form-control" id="idfornitore">
@@ -46,10 +53,9 @@
     </form:select>
        <form:errors path="idfornitore" cssClass="error"/>
    </div>
+   <button type="submit" class="btn btn-primary">Cerca</button>
   </form:form>
    <thead>
-   <spring:url value="/OrdineAcquisto/CercaOrdiniAcquistoPerFornitore/" var="addURL" />
-   <a href="${addURL}" role="button" class="btn btn-primary">Cerca</a>
   
   <c:if test="${elencoOrdiniAcquisto.size() == 0}">
    <table class="table table-striped">
@@ -57,8 +63,6 @@
      <th scope="row">Non ci sono ordini di acquisto!</th>
     </thead>
    </table>
-      <spring:url value="/OrdineAcquisto/AddOrdineAcquisto" var="addURL" />
-     <a href="${addURL}" role="button" class="btn btn-primary">Nuovo Ordine Acquisto</a>
   </c:if>
   
   <c:if test="${elencoOrdiniAcquisto.size() != 0}">
@@ -93,9 +97,9 @@
     </c:forEach>
    </tbody>
    </table>
-   <spring:url value="/OrdineAcquisto/AddOrdineAcquisto" var="addURL" />
-   <a href="${addURL}" role="button" class="btn btn-primary">Nuovo Ordine Acquisto</a>
   </c:if>
+  <spring:url value="/OrdineAcquisto/AddOrdineAcquisto" var="addURL" />
+  <a href="${addURL}" role="button" class="btn btn-primary">Nuovo Ordine Acquisto</a>
  </table>
 </div>
 </body>

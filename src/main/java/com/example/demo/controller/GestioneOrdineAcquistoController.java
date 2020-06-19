@@ -39,7 +39,7 @@ public class GestioneOrdineAcquistoController {
 		return model;
 	}
 	
-	@GetMapping (value = "/CercaOrdiniAcquistoPerFornitore")
+	@PostMapping (value = "/CercaOrdiniAcquistoPerFornitore")
 	public ModelAndView listaOrdiniAcquistoPerFornitore(@ModelAttribute ("oggettoFornitore") Fornitore oFornitore, HttpSession SessionObject) {
 		ModelAndView model = new ModelAndView("OrdineAcquisto/ListaOrdiniAcquisto");
 		List<Fornitore> listaFornitori = fornitoreService.getAllFornitori();
@@ -56,7 +56,7 @@ public class GestioneOrdineAcquistoController {
 		ModelAndView model = new ModelAndView();
 		OrdineAcquisto oOrdineAcquisto = new OrdineAcquisto();
 		model.addObject("oOrdineAcquisto", oOrdineAcquisto);
-		model.setViewName("/OrdineAcquisto/AddEditOrdineAcquisto");
+		model.setViewName("/OrdineAcquisto/AddOrdineAcquisto");
 		List<Fornitore> listaFornitori = fornitoreService.getAllFornitori();
 		model.addObject("elencoFornitori", listaFornitori);
 		return model;
@@ -64,10 +64,10 @@ public class GestioneOrdineAcquistoController {
 
 	@GetMapping (value = "/EditOrdineAcquisto/{id}")
 	public ModelAndView editOrdineAcquisto(@PathVariable("id") Integer id) {
-		ModelAndView model = new ModelAndView("OrdineAcquisto/AddEditOrdineAcquisto");
+		ModelAndView model = new ModelAndView("OrdineAcquisto/AddOrdineAcquisto");
 		OrdineAcquisto oOrdineAcquisto = ordineAcquistoService.getOrdineAcquistoById(id);
 		model.addObject("oOrdineAcquisto", oOrdineAcquisto);
-		model.setViewName("/OrdineAcquisto/AddEditOrdineAcquisto");
+		model.setViewName("/OrdineAcquisto/EditOrdineAcquisto");
 		return model;
 	}
 
@@ -75,11 +75,11 @@ public class GestioneOrdineAcquistoController {
 	public ModelAndView saveOrdineAcquisto(@Valid @ModelAttribute("oggettoOrdineAcquisto") OrdineAcquisto oOrdineAcquisto, BindingResult bindingresult) {
 		if (bindingresult.hasErrors()) {
 			ModelAndView model = new ModelAndView();
-			model.setViewName("OrdineAcquisto/AddEditOrdineAcquisto");
+			model.setViewName("OrdineAcquisto/AddOrdineAcquisto");
 			return model;
 		} else {
 			ordineAcquistoService.saveOrUpdate(oOrdineAcquisto);
-			return new ModelAndView("redirect:/OrdineAcquisto/ListaOrdineAcquisto");
+			return new ModelAndView("redirect:/OrdineAcquisto/ListaOrdiniAcquisto");
 		}
 	}
 	
